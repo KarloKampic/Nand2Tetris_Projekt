@@ -1,0 +1,18 @@
+class Main
+{
+   function void main()
+   {
+      var AsteroidsDodge game;
+
+      while (true)
+      {
+         do Screen.clearScreen();
+         do Sys.wait(250);
+         let game = AsteroidsDodge.new();
+         do game.run();
+         do game.dispose();
+      }
+
+      return; 
+   }
+}

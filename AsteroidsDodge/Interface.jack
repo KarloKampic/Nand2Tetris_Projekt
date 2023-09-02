@@ -1,0 +1,80 @@
+class Interface
+{
+   field string welcomeMessage1, welcomeMessage2, welcomeMessage3;
+   field string scoreMessage;
+   field string finalMessage1, finalMessage2, finalMessage3;
+   field Array playerMessage;
+   
+   constructor Interface new()
+   {
+      // initialize strings
+      let welcomeMessage1 = "Kontrole: gore / dole strelice ";
+      let welcomeMessage2 = "Pritisni esc kako bi izasao iz trenutne runde";
+      let welcomeMessage3 = "Pritisni enter za pokretanje:";
+
+      let scoreMessage = "score: ";
+
+      let finalMessage1 = "Izgubio si!";
+      let finalMessage2 = "Tvoj score: ";
+      let finalMessage3 = "Pritisni enter za nastavak:";
+
+
+      let playerMessage = "Player1 / ";
+
+      return this;
+   }
+
+
+   method void drawWelcomeWindow()
+   {
+      do Output.moveCursor(9, 11);
+      do Output.printString(welcomeMessage1);
+      do Output.moveCursor(10, 11);
+      do Output.printString(welcomeMessage2);
+      do Output.moveCursor(11, 11);
+      do Output.printString(welcomeMessage3);
+
+      return;
+   }
+
+
+   method void drawPlayerScore(int score)
+   {
+      do Output.moveCursor(0, 0);
+      do Output.printString(playerMessage);
+      do Output.printString(scoreMessage);
+      do Output.printInt(score);
+   
+      return;
+   }
+
+   method void drawFinalWindow(int score)
+   {
+      do Output.moveCursor(10, 18);
+      do Output.printString(finalMessage1);
+      do Output.moveCursor(11, 18);
+      do Output.printString(finalMessage2);
+      do Output.printInt(score);
+      do Output.moveCursor(12, 18);
+      do Output.printString(finalMessage3);
+
+      return;
+   }
+
+   method void dispose()
+   {
+      do Memory.deAlloc(welcomeMessage1);
+      do Memory.deAlloc(welcomeMessage2);
+      do Memory.deAlloc(welcomeMessage3);
+
+      do Memory.deAlloc(scoreMessage);
+
+      do Memory.deAlloc(finalMessage1);
+      do Memory.deAlloc(finalMessage2);
+      do Memory.deAlloc(finalMessage3);
+
+      do Memory.deAlloc(playerMessage);
+
+      return;
+   }
+}

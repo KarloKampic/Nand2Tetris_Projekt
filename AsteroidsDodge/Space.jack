@@ -1,0 +1,53 @@
+class Space
+{
+   field int offset, markingLength, spaceLength; 
+   
+   
+   constructor Space new()
+   {
+      let offset = 0;
+      let markingLength = 30;
+      let spaceLength = 108;
+
+      return this;
+   }
+
+   method void dispose()
+   {
+      do Memory.deAlloc(this);
+
+      return;
+   }
+
+   method void drawMarking()
+   {
+      var int i;
+         
+      let i = offset;
+      while (i + markingLength < 511)
+      {
+         do Screen.drawLine((i+4), 64, (i+4), 70);
+         do Screen.drawLine((i+2), 67, (i+6), 67);
+         do Screen.drawLine((i+4), 128, (i+4), 134);
+         do Screen.drawLine((i+2), 131, (i+6), 131);
+         do Screen.drawLine((i+4), 192, (i+4), 198);
+         do Screen.drawLine((i+2), 195, (i+6), 195);
+
+         let i = i + spaceLength;
+      }
+      
+      return;
+   }
+
+   method void moveMarking(int speed)
+   {
+      let offset = offset + speed;
+
+      if (offset > (spaceLength - 1))
+      {
+         let offset = offset - spaceLength;
+      }
+
+      return;
+   }
+}

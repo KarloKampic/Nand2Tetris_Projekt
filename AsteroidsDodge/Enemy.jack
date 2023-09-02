@@ -1,0 +1,268 @@
+   class Enemy 
+{
+   field int x, y;
+   field int xSize, ySize;
+   field boolean alive;
+   
+   
+   constructor Enemy new(int Ax, int Ay)
+   {
+      let xSize = 48;
+      let ySize = 32;
+
+      do reborn(Ax, Ay);
+
+      return this;
+   }
+
+   method boolean onScreen()
+   {
+      return (((1 < x) & ((x + xSize) < 512)) & ((1 < y) & ((y + ySize) < 256)));
+   }
+   
+   method int GetX()
+   {
+      return x;
+   }
+
+   method int GetY()
+   {
+      return y;
+   }
+
+   method boolean isAlive()
+   {
+      return alive;
+   }
+
+   method void reborn(int Ax, int Ay)
+   {
+      let alive = true;
+
+      let x = Ax;
+      let y = Ay;
+
+      return;
+   }
+
+   method void die()
+   {
+      let x = 0;
+      let y = 0;
+      let alive = false;
+
+      return;
+   }
+
+   method void dispose()
+   {
+      do Memory.deAlloc(this);
+
+      return;
+   }
+
+   method void draw()
+    {
+      // nacrtaj asteroid
+      do Utils.drawRectangleByOffset(37, 18, 43, 25, x, y);
+      do Utils.drawRectangleByOffset(38, 19, 42, 24, x, y);
+      do Utils.drawRectangleByOffset(39, 20, 41, 23, x, y);
+      do Utils.drawLineByOffset(40, 21, 40, 23, x, y);
+      do Utils.drawLineByOffset(36, 19, 36, 20, x, y);
+      do Utils.drawLineByOffset(40, 16, 40, 20, x, y);
+      do Utils.drawLineByOffset(39, 26, 39, 27, x, y);
+      do Utils.drawPixelByOffset(44, 23, x, y);
+      do Utils.drawLineByOffset(18, 16, 20, 16, x, y);   
+      do Utils.drawLineByOffset(18, 17, 20, 17, x, y);
+      do Utils.drawLineByOffset(21, 14, 23, 14, x, y);
+      do Utils.drawLineByOffset(21, 15, 23, 15, x, y);
+      do Utils.drawLineByOffset(21, 18, 24, 18, x, y);
+      do Utils.drawLineByOffset(25, 20, 28, 20, x, y);
+      do Utils.drawLineByOffset(29, 22, 31, 22, x, y);
+      do Utils.drawLineByOffset(32, 22, 32, 27, x, y);
+      do Utils.drawLineByOffset(33, 22, 33, 27, x, y);
+      do Utils.drawLineByOffset(34, 25, 36, 25, x, y);
+      do Utils.drawLineByOffset(36, 27, 44, 27, x, y);
+      do Utils.drawLineByOffset(45, 25, 45, 18, x, y);
+      do Utils.drawLineByOffset(42, 14, 41, 14, x, y);
+      do Utils.drawLineByOffset(40, 13, 36, 13, x, y);
+      do Utils.drawLineByOffset(24, 16, 35, 16, x, y);
+      do Utils.drawLineByOffset(36, 14, 36, 15, x, y);
+      do Utils.drawLineByOffset(28, 17, 34, 17, x, y);
+      do Utils.drawPixelByOffset(43, 15, x, y);
+      do Utils.drawPixelByOffset(44, 16, x, y);
+      do Utils.drawPixelByOffset(45, 17, x, y);
+      do Utils.drawPixelByOffset(44, 26, x, y);
+      do Utils.drawPixelByOffset(35, 26, x, y);
+      do Utils.drawPixelByOffset(25, 19, x, y);
+      do Utils.drawPixelByOffset(29, 21, x, y);
+      do Utils.drawPixelByOffset(5, 9, x, y);
+      do Utils.drawPixelByOffset(5, 10, x, y);
+      do Utils.drawPixelByOffset(5, 11, x, y);
+      do Utils.drawPixelByOffset(5, 12, x, y);
+      do Utils.drawPixelByOffset(6, 9, x, y);
+      do Utils.drawPixelByOffset(7, 9, x, y);
+      do Utils.drawPixelByOffset(7, 10, x, y);
+      do Utils.drawPixelByOffset(8, 11, x, y);
+      do Utils.drawPixelByOffset(8, 12, x, y);
+      do Utils.drawPixelByOffset(9, 13, x, y);
+      do Utils.drawPixelByOffset(10, 12, x, y);
+      do Utils.drawPixelByOffset(11, 11, x, y);
+      do Utils.drawPixelByOffset(12, 11, x, y);
+      do Utils.drawPixelByOffset(13, 11, x, y);
+      do Utils.drawPixelByOffset(14, 11, x, y);
+      do Utils.drawPixelByOffset(14, 12, x, y);
+      do Utils.drawPixelByOffset(15, 13, x, y);
+      do Utils.drawPixelByOffset(16, 12, x, y);
+      do Utils.drawPixelByOffset(16, 11, x, y);
+      do Utils.drawPixelByOffset(17, 13, x, y);
+      do Utils.drawPixelByOffset(18, 12, x, y);
+      do Utils.drawPixelByOffset(18, 11, x, y);
+      do Utils.drawPixelByOffset(19, 11, x, y);
+      do Utils.drawPixelByOffset(20, 11, x, y);
+      do Utils.drawPixelByOffset(21, 11, x, y);
+      do Utils.drawPixelByOffset(22, 11, x, y);
+      do Utils.drawPixelByOffset(23, 11, x, y);
+      do Utils.drawPixelByOffset(24, 11, x, y);
+      do Utils.drawPixelByOffset(25, 11, x, y);
+      do Utils.drawPixelByOffset(21, 9, x, y);
+      do Utils.drawPixelByOffset(21, 10, x, y);
+      do Utils.drawPixelByOffset(25, 12, x, y);
+      do Utils.drawPixelByOffset(26, 13, x, y);
+      do Utils.drawPixelByOffset(27, 13, x, y);
+      do Utils.drawPixelByOffset(28, 13, x, y);
+      do Utils.drawPixelByOffset(29, 13, x, y);
+      do Utils.drawPixelByOffset(30, 12, x, y); 
+      do Utils.drawPixelByOffset(31, 11, x, y);
+      do Utils.drawPixelByOffset(32, 10, x, y);
+      do Utils.drawPixelByOffset(32, 9, x, y);
+      do Utils.drawPixelByOffset(31, 8, x, y);
+      do Utils.drawPixelByOffset(31, 7, x, y);
+      do Utils.drawPixelByOffset(31, 6, x, y);
+      do Utils.drawPixelByOffset(32, 6, x, y);
+      do Utils.drawPixelByOffset(33, 6, x, y);
+      do Utils.drawPixelByOffset(34, 7, x, y);
+      do Utils.drawPixelByOffset(35, 7, x, y);
+      do Utils.drawPixelByOffset(36, 7, x, y);
+      do Utils.drawPixelByOffset(37, 7, x, y);
+      do Utils.drawPixelByOffset(38, 7, x, y);
+      do Utils.drawPixelByOffset(38, 8, x, y);
+      do Utils.drawPixelByOffset(39, 9, x, y);
+      do Utils.drawPixelByOffset(40, 9, x, y);
+      do Utils.drawPixelByOffset(40, 10, x, y);
+      do Utils.drawPixelByOffset(41, 11, x, y);
+      do Utils.drawPixelByOffset(42, 11, x, y);
+      do Utils.drawPixelByOffset(43, 11, x, y);
+      do Utils.drawPixelByOffset(43, 12, x, y);
+      do Utils.drawPixelByOffset(44, 13, x, y);
+      do Utils.drawPixelByOffset(45, 13, x, y);
+      do Utils.drawPixelByOffset(45, 12, x, y);
+      do Utils.drawPixelByOffset(45, 13, x, y);
+      do Utils.drawPixelByOffset(44, 14, x, y);
+      do Utils.drawPixelByOffset(45, 15, x, y);
+      do Utils.drawPixelByOffset(46, 16, x, y); 
+      do Utils.drawPixelByOffset(46, 17, x, y);
+      do Utils.drawPixelByOffset(47, 18, x, y);
+      do Utils.drawPixelByOffset(47, 19, x, y);
+      do Utils.drawPixelByOffset(48, 19, x, y);
+      do Utils.drawPixelByOffset(48, 20, x, y);
+      do Utils.drawPixelByOffset(47, 21, x, y);
+      do Utils.drawPixelByOffset(47, 22, x, y);
+      do Utils.drawPixelByOffset(47, 23, x, y);
+      do Utils.drawPixelByOffset(46, 24, x, y);
+      do Utils.drawPixelByOffset(46, 25, x, y);
+      do Utils.drawPixelByOffset(45, 26, x, y);
+      do Utils.drawPixelByOffset(45, 27, x, y);
+      do Utils.drawPixelByOffset(45, 28, x, y);
+      do Utils.drawPixelByOffset(44, 29, x, y);
+      do Utils.drawPixelByOffset(44, 30, x, y);
+      do Utils.drawPixelByOffset(44, 31, x, y);
+      do Utils.drawPixelByOffset(44, 31, x, y);
+      do Utils.drawPixelByOffset(43, 32, x, y);
+      do Utils.drawPixelByOffset(43, 31, x, y);
+      do Utils.drawPixelByOffset(43, 30, x, y);
+      do Utils.drawPixelByOffset(42, 30, x, y);
+      do Utils.drawPixelByOffset(41, 30, x, y); 
+      do Utils.drawPixelByOffset(40, 30, x, y);
+      do Utils.drawPixelByOffset(39, 30, x, y);
+      do Utils.drawPixelByOffset(38, 30, x, y);
+      do Utils.drawPixelByOffset(37, 30, x, y);
+      do Utils.drawPixelByOffset(36, 30, x, y);
+      do Utils.drawPixelByOffset(35, 30, x, y);
+      do Utils.drawPixelByOffset(34, 30, x, y);
+      do Utils.drawPixelByOffset(33, 30, x, y);
+      do Utils.drawPixelByOffset(32, 30, x, y);
+      do Utils.drawPixelByOffset(31, 30, x, y);
+      do Utils.drawPixelByOffset(30, 30, x, y);
+      do Utils.drawPixelByOffset(29, 30, x, y);
+      do Utils.drawPixelByOffset(28, 30, x, y);
+      do Utils.drawPixelByOffset(28, 29, x, y);
+      do Utils.drawPixelByOffset(29, 29, x, y); 
+      do Utils.drawPixelByOffset(30, 29, x, y);
+      do Utils.drawPixelByOffset(31, 29, x, y);
+      do Utils.drawPixelByOffset(32, 29, x, y);
+      do Utils.drawPixelByOffset(33, 29, x, y);
+      do Utils.drawPixelByOffset(34, 29, x, y);
+      do Utils.drawPixelByOffset(35, 29, x, y);
+      do Utils.drawPixelByOffset(36, 29, x, y);
+      do Utils.drawPixelByOffset(37, 29, x, y);
+      do Utils.drawPixelByOffset(38, 31, x, y);
+      do Utils.drawPixelByOffset(38, 32, x, y);
+      do Utils.drawPixelByOffset(33, 31, x, y);
+      do Utils.drawPixelByOffset(33, 32, x, y);
+      do Utils.drawPixelByOffset(27, 28, x, y);
+      do Utils.drawPixelByOffset(26, 28, x, y);
+      do Utils.drawPixelByOffset(26, 27, x, y);
+      do Utils.drawPixelByOffset(25, 27, x, y);
+      do Utils.drawPixelByOffset(25, 26, x, y);
+      do Utils.drawPixelByOffset(26, 26, x, y);
+      do Utils.drawPixelByOffset(27, 26, x, y);
+      do Utils.drawPixelByOffset(28, 26, x, y);
+      do Utils.drawPixelByOffset(28, 25, x, y);
+      do Utils.drawPixelByOffset(28, 24, x, y);
+      do Utils.drawPixelByOffset(27, 23, x, y);
+      do Utils.drawPixelByOffset(26, 23, x, y);
+      do Utils.drawPixelByOffset(25, 23, x, y);
+      do Utils.drawPixelByOffset(24, 23, x, y);
+      do Utils.drawPixelByOffset(23, 23, x, y);
+      do Utils.drawPixelByOffset(22, 23, x, y);
+      do Utils.drawPixelByOffset(21, 22, x, y);
+      do Utils.drawPixelByOffset(21, 21, x, y);
+      do Utils.drawPixelByOffset(20, 22, x, y);
+      do Utils.drawPixelByOffset(20, 23, x, y);
+      do Utils.drawPixelByOffset(19, 22, x, y);
+      do Utils.drawPixelByOffset(18, 22, x, y);
+      do Utils.drawPixelByOffset(19, 21, x, y);
+      do Utils.drawPixelByOffset(18, 21, x, y);
+      do Utils.drawPixelByOffset(17, 20, x, y);
+      do Utils.drawPixelByOffset(16, 20, x, y);
+      do Utils.drawPixelByOffset(16, 19, x, y);
+      do Utils.drawPixelByOffset(17, 19, x, y);
+      do Utils.drawPixelByOffset(17, 18, x, y);
+      do Utils.drawPixelByOffset(16, 17, x, y);
+      do Utils.drawPixelByOffset(15, 17, x, y);
+      do Utils.drawPixelByOffset(14, 17, x, y);
+      do Utils.drawPixelByOffset(13, 17, x, y);
+      do Utils.drawPixelByOffset(13, 16, x, y);
+      do Utils.drawPixelByOffset(13, 15, x, y);
+      do Utils.drawPixelByOffset(12, 15, x, y);
+      do Utils.drawPixelByOffset(11, 15, x, y);
+      do Utils.drawPixelByOffset(10, 15, x, y);
+      do Utils.drawPixelByOffset(9, 15, x, y);
+      do Utils.drawPixelByOffset(8, 15, x, y);
+      do Utils.drawPixelByOffset(8, 14, x, y);
+      do Utils.drawPixelByOffset(8, 13, x, y);
+      do Utils.drawPixelByOffset(7, 13, x, y);
+      do Utils.drawPixelByOffset(6, 13, x, y);
+
+      return;
+    }
+
+   method void move(int dx, int dy)
+   {
+      let y = y + dy;
+      let x = x + dx;
+
+      return;
+   }
+}
